@@ -2,6 +2,8 @@
 export const STORE={name:'DDM Electronics',shortName:'DDM',phone:'917617202212',displayPhone:'+91 76172 02212',email:'ddmelectronics@rediffmail.com',address:'HQCM+5F, Bhind, Madhya Pradesh',latitude:26.570557859198875,longitude:78.78421004180777,currency:'INR',locale:'en-IN'};
 // Public integration settings only. Never place secret API keys in this file.
 export const INTEGRATIONS={apiBaseUrl:'',ordersEndpoint:'/orders',useLiveOrderApi:false,whatsapp:{enabled:true,phone:'917617202212'},email:{enabled:true,address:'ddmelectronics@rediffmail.com'},instagram:{enabled:false,url:''},googleMaps:{enabled:true,url:'https://www.google.com/maps/dir/?api=1&destination=26.570557859198875%2C78.78421004180777'},payment:{enabled:false,provider:'razorpay'}};
+// Assisted-order policy. Change these values here if the store policy changes later.
+export const ORDER_POLICY={advancePercent:20,cashOnDelivery:true,returnsAllowed:false,replacementOnly:true};
 export const CATEGORIES=[
 {id:'Washing Machine',label:'Washing Machines',detail:'Top load & front load',icon:'🫧'},
 {id:'AC',label:'Air Conditioners',detail:'Split & window ACs',icon:'❄️'},
