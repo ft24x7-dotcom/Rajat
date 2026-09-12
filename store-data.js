@@ -1,7 +1,7 @@
 // EDIT THIS FILE to update store details, categories, products and prices.
-export const STORE={name:'DDM Electronics',shortName:'DDM',phone:'917617202212',displayPhone:'+91 76172 02212',email:'ddmelectronics@rediffmail.com',address:'Near Beti Bachao Chauraha, Ater Road, Bhind, Madhya Pradesh',currency:'INR',locale:'en-IN'};
+export const STORE={name:'DDM Electronics',shortName:'DDM',phone:'917617202212',displayPhone:'+91 76172 02212',email:'ddmelectronics@rediffmail.com',address:'HQCM+5F, Bhind, Madhya Pradesh',latitude:26.570557859198875,longitude:78.78421004180777,currency:'INR',locale:'en-IN'};
 // Public integration settings only. Never place secret API keys in this file.
-export const INTEGRATIONS={apiBaseUrl:'',ordersEndpoint:'/orders',useLiveOrderApi:false,whatsapp:{enabled:true,phone:'917617202212'},email:{enabled:true,address:'ddmelectronics@rediffmail.com'},instagram:{enabled:false,url:''},googleMaps:{enabled:true,url:'https://maps.app.goo.gl/aU2oA7ytdBoM9DJo7?g_st=aw'},payment:{enabled:false,provider:'razorpay'}};
+export const INTEGRATIONS={apiBaseUrl:'',ordersEndpoint:'/orders',useLiveOrderApi:false,whatsapp:{enabled:true,phone:'917617202212'},email:{enabled:true,address:'ddmelectronics@rediffmail.com'},instagram:{enabled:false,url:''},googleMaps:{enabled:true,url:'https://www.google.com/maps/dir/?api=1&destination=26.570557859198875%2C78.78421004180777'},payment:{enabled:false,provider:'razorpay'}};
 export const CATEGORIES=[{id:'TV',label:'Televisions',detail:'Smart, QLED & 4K',icon:'📺'},{id:'Cooling',label:'Air & Cooling',detail:'ACs, coolers & fans',icon:'❄️'},{id:'Kitchen',label:'Kitchen',detail:'Fridges & microwaves',icon:'🧊'},{id:'Laundry',label:'Laundry',detail:'Washers & dryers',icon:'🫧'}];
 export const PRODUCTS=[
 {id:1,category:'TV',icon:'📺',brand:'Samsung',name:'Crystal 4K Smart TV',variant:'55 inch · UHD · HDR',price:46990,mrp:57990,badge:'Bestseller'},
