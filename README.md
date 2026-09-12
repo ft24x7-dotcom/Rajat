@@ -18,3 +18,7 @@
 - `app.js`: cart, filtering and checkout interactions.
 
 This version is a front-end sample. The checkout deliberately does not charge customers.
+
+## Future integrations
+
+The project now includes an integration-ready service layer and Vercel API route. See `ARCHITECTURE.md`. Keep `useLiveOrderApi` set to `false` until the payment gateway, database and notifications are connected and tested.
