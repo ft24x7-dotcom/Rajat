@@ -1,13 +1,8 @@
-# Volt & Home — Vercel deployment
+# Volt & Home — portable website
 
-## Fastest method
+## Hosting
 
-1. Install Node.js from https://nodejs.org if it is not installed.
-2. Extract this ZIP.
-3. Open Terminal/PowerShell inside the extracted folder.
-4. Run `npx vercel` and sign in when prompted.
-5. Accept the default project settings.
-6. Run `npx vercel --prod` for the production link.
+Upload all website files into the host's public website directory. This is usually `public_html` on Hostinger and GoDaddy/cPanel hosting. Keep `index.html` at the top level.
 
 ## Common edits
 
@@ -21,4 +16,4 @@ This version is a front-end sample. The checkout deliberately does not charge cu
 
 ## Future integrations
 
-The project now includes an integration-ready service layer and Vercel API route. See `ARCHITECTURE.md`. Keep `useLiveOrderApi` set to `false` until the payment gateway, database and notifications are connected and tested.
+The project includes a host-independent integration service layer. See `ARCHITECTURE.md` and `HOSTING.md`. Keep `useLiveOrderApi` set to `false` until the payment gateway, database and notifications are connected and tested.
