@@ -19,3 +19,6 @@
 .details p{white-space:normal;}
 .chips{flex-wrap:wrap;}
 @media(max-width:600px){.products .visual{height:180px;padding:14px}.details .enquire-product{font-size:.65rem;padding:10px 6px}.chips{flex-wrap:nowrap}.search input{min-width:0;width:100%}}
+
+/* Store-priority brands */
+.brand-grid>button{position:relative}.brand-grid>button.featured{border-color:#8bd6cf;background:linear-gradient(145deg,#effbf9,#fff);box-shadow:0 14px 34px rgba(11,143,133,.1)}.brand-pick{position:absolute;top:10px;right:10px;padding:4px 7px;border-radius:999px;background:#0d9488;color:#fff;font-size:.56rem;font-style:normal;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.brand-grid>button.featured .brand-logo b{color:#087c74}
