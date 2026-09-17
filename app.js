@@ -9,7 +9,7 @@ const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 let state={category:'All',brand:'All',query:'',cart:[],lastOrder:null};
 const money=n=>new Intl.NumberFormat(STORE.locale,{style:'currency',currency:STORE.currency,maximumFractionDigits:0}).format(n);
 function renderBrands(){
-  $('[data-brands]').innerHTML=BRANDS.map(b=>`<button class="${state.brand===b.id?'active':''}" data-brand="${b.id}"><span class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=${b.domain}&sz=128" alt="" loading="lazy"><b>${b.name}</b></span><small>${b.detail}</small><i>Shop brand →</i></button>`).join('');
+  $('[data-brands]').innerHTML=BRANDS.map(b=>`<button class="${state.brand===b.id?'active':''} ${b.featured?'featured':''}" data-brand="${b.id}">${b.featured?'<em class="brand-pick">Featured</em>':''}<span class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=${b.domain}&sz=128" alt="" loading="lazy"><b>${b.name}</b></span><small>${b.detail}</small><i>Shop brand →</i></button>`).join('');
 }
 function renderCategories(){
   $('[data-categories]').innerHTML=CATEGORIES.map(c=>`<button data-category="${c.id}"><span>${c.icon}</span><div><b>${c.label}</b><small>${c.detail}</small></div><i>→</i></button>`).join('');
