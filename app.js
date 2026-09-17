@@ -1,19 +1,13 @@
 import{STORE,INTEGRATIONS,ORDER_POLICY,CATEGORIES,BRANDS,PRODUCTS}from'./store-data.js';
-import{submitOrder}from'./order-service.js';
+
 
 const theme=document.createElement('link');theme.rel='stylesheet';theme.href='./theme.css';document.head.append(theme);
 window.addEventListener('load',()=>setTimeout(()=>document.getElementById('ddm-preloader')?.classList.add('ddm-loaded'),1800),{once:true});
 
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
-let state={category:'All',brand:'All',query:'',cart:load(),lastOrder:null};
+let state={category:'All',brand:'All',query:'',cart:[],lastOrder:null};
 const money=n=>new Intl.NumberFormat(STORE.locale,{style:'currency',currency:STORE.currency,maximumFractionDigits:0}).format(n);
-function load(){try{return JSON.parse(localStorage.getItem('ddm-cart'))||[]}catch{return[]}}
-function save(){localStorage.setItem('ddm-cart',JSON.stringify(state.cart))}
-function product(id){return PRODUCTS.find(p=>p.id===Number(id))}
-function quantity(){return state.cart.reduce((s,i)=>s+i.quantity,0)}
-function total(){return state.cart.reduce((s,i)=>s+product(i.id).price*i.quantity,0)}
-
 function renderBrands(){
   $('[data-brands]').innerHTML=BRANDS.map(b=>`<button class="${state.brand===b.id?'active':''}" data-brand="${b.id}"><span class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=${b.domain}&sz=128" alt="" loading="lazy"><b>${b.name}</b></span><small>${b.detail}</small><i>Shop brand →</i></button>`).join('');
 }
@@ -30,46 +24,21 @@ function renderActiveFilters(){
 function renderProducts(){
   const q=state.query.toLowerCase();
   const items=PRODUCTS.filter(p=>(state.category==='All'||p.category===state.category)&&(state.brand==='All'||p.brand===state.brand)&&`${p.brand} ${p.name} ${p.variant}`.toLowerCase().includes(q));
-  $('[data-products]').innerHTML=items.map(p=>`<article><div class="visual"><span>${p.badge}</span>${p.image?`<img src="${p.image}" alt="${p.brand} ${p.name}" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><b hidden>${p.icon}</b>`:`<b>${p.icon}</b>`}<button aria-label="Save ${p.name}">♡</button></div><div class="details"><small>${p.brand}</small><h3>${p.name}</h3><p>${p.variant}</p><div><b>${money(p.price)}</b><del>${money(p.mrp)}</del></div><button data-add="${p.id}">Add to cart <b>＋</b></button></div></article>`).join('');
+  $('[data-products]').innerHTML=items.map(p=>`<article><div class="visual">${p.image?`<img src="${p.image}" alt="${p.brand} ${p.name}" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><small hidden>Photo unavailable</small>`:`<b>${p.icon}</b>`}</div><div class="details"><small>${p.brand}</small><h3>${p.name}</h3><p>${p.variant}</p><a class="btn primary enquire-product" href="${enquiry(p)}" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></div></article>`).join('');
   $('[data-empty]').classList.toggle('hidden',items.length>0);
-  renderActiveFilters();
+  renderActiveFilters(); if(!items.length){const a=document.createElement('a');a.className='btn pale';a.textContent='Ask the store about this range';a.href=enquiry();a.target='_blank';a.rel='noopener';$('[data-empty]').replaceChildren(document.createTextNode('Ask us for available models in this range. '),a);}
 }
-function renderCart(){
-  const count=quantity();$$('[data-count],[data-mobile-count]').forEach(x=>x.textContent=count);
-  const list=$('[data-cart-list]'),box=$('[data-cart-total-box]');
-  if(!state.cart.length){list.innerHTML='<div class="empty">🛒<h3>Your cart is empty</h3><p>Add something you love—we’ll keep it here.</p><button class="btn pale" data-close>Browse products</button></div>';box.classList.add('hidden')}
-  else{box.classList.remove('hidden');list.innerHTML=state.cart.map(i=>{const p=product(i.id);return `<article><div>${p.icon}</div><section><h3>${p.name}</h3><small>${p.variant}</small><b>${money(p.price)}</b><nav><button data-minus="${i.id}">−</button><span>${i.quantity}</span><button data-plus="${i.id}">＋</button></nav></section><button data-remove="${i.id}">×</button></article>`}).join('');$('[data-total]').textContent=money(total())}
-  save();
-}
-function add(id){const i=state.cart.find(x=>x.id===Number(id));i?i.quantity++:state.cart.push({id:Number(id),quantity:1});renderCart();toast(`${product(id).name} added`)}
-function change(id,n){const i=state.cart.find(x=>x.id===Number(id));if(!i)return;i.quantity+=n;if(i.quantity<1)state.cart=state.cart.filter(x=>x.id!==Number(id));renderCart()}
-function open(type){const backdrop=$('[data-backdrop]'),panel=$(`[data-${type}]`);if(!backdrop||!panel){toast('This section could not be opened. Please refresh and try again.');return}document.body.classList.add('locked');backdrop.classList.add('open');panel.classList.add('open')}
-function close(){document.body.classList.remove('locked');$('[data-backdrop]')?.classList.remove('open');$$('[data-drawer],[data-modal]').forEach(x=>x.classList.remove('open'))}
-function toast(msg){const t=$('[data-toast]');if(!t)return;t.textContent=msg;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2200)}
-function orderText(order=state.lastOrder){const cart=order?.cart||state.cart,amount=order?.total??total(),rate=ORDER_POLICY.advancePercent/100,advance=Math.round(amount*rate),balance=amount-advance,lines=cart.map(i=>{const p=product(i.id);return `• ${p.brand} ${p.name} × ${i.quantity} — ${money(p.price*i.quantity)}`}),customer=order?.customer;return `Hello ${STORE.name}, I would like to confirm this order request:\n\n${lines.join('\n')}\n\nOrder total: ${money(amount)}\n${ORDER_POLICY.advancePercent}% advance: ${money(advance)}\nBalance after advance: ${money(balance)}${customer?`\n\nName: ${customer.name}\nPhone: ${customer.phone}\nAddress: ${customer.address}, ${customer.pin}\nPayment method: ${customer.payment}`:''}${order?.orderId?`\nOrder reference: ${order.orderId}`:''}\n\nI understand that cash on delivery requires a ${ORDER_POLICY.advancePercent}% advance and that products are eligible for replacement only, not return. Please confirm stock, exact model, latest price and advance payment instructions.`}
-function whatsapp(order){window.open(`https://wa.me/${INTEGRATIONS.whatsapp.phone}?text=${encodeURIComponent(orderText(order))}`,'_blank','noopener')}
-function emailOrder(order){location.href=`mailto:${INTEGRATIONS.email.address}?subject=${encodeURIComponent(`${order?.orderId||'New'} order confirmation — ${STORE.name}`)}&body=${encodeURIComponent(orderText(order))}`}
 
+function enquiry(p){
+ const subject=p ? p.brand+' '+p.name+' ('+p.variant+')' : [state.brand==='All'?'':state.brand,state.category==='All'?'appliances':state.category].filter(Boolean).join(' ');
+ return 'https://wa.me/'+INTEGRATIONS.whatsapp.phone+'?text='+encodeURIComponent('Hello DDM Electronics, I am interested in '+subject+'. Please share the latest price, availability and product details.');
+}
 document.addEventListener('click',e=>{
-  const t=e.target.closest('button,a');if(!t)return;
-  if(t.matches('[data-brand]')){state.brand=t.dataset.brand;renderBrands();renderProducts();setTimeout(()=>$('#shop')?.scrollIntoView(),50)}
-  if(t.matches('[data-category]')){state.category=t.dataset.category;renderCategories();renderProducts();setTimeout(()=>$('#shop')?.scrollIntoView(),50)}
-  if(t.matches('[data-filter]')){state.category=t.dataset.filter;renderCategories();renderProducts()}
-  if(t.matches('[data-clear-brand]')){state.brand='All';renderBrands();renderProducts()}
-  if(t.matches('[data-clear-category]')){state.category='All';renderCategories();renderProducts()}
-  if(t.matches('[data-add]'))add(t.dataset.add);
-  if(t.matches('[data-open-cart]'))open('drawer');
-  if(t.matches('[data-plus]'))change(t.dataset.plus,1);
-  if(t.matches('[data-minus]'))change(t.dataset.minus,-1);
-  if(t.matches('[data-remove]')){state.cart=state.cart.filter(x=>x.id!==Number(t.dataset.remove));renderCart()}
-  if(t.matches('[data-close]'))close();
-  if(t.matches('[data-checkout]')){close();setTimeout(()=>open('modal'),120)}
-  if(t.matches('[data-send-whatsapp]'))whatsapp(state.lastOrder);
-  if(t.matches('[data-send-email]'))emailOrder(state.lastOrder);
-  if(t.matches('[data-finish]')){state.cart=[];state.lastOrder=null;renderCart();close();$('[data-form]')?.reset();$('[data-form]')?.classList.remove('hidden');$('[data-success]')?.classList.add('hidden')}
+ const t=e.target.closest('button,a');if(!t)return;
+ if(t.matches('[data-brand]')){state.brand=t.dataset.brand;state.category='All';renderBrands();renderCategories();renderProducts();$('#shop').scrollIntoView();}
+ if(t.matches('[data-category],[data-filter]')){state.category=t.dataset.category||t.dataset.filter;renderCategories();renderProducts();if(t.dataset.category)$('#shop').scrollIntoView();}
+ if(t.matches('[data-clear-brand]')){state.brand='All';renderBrands();renderProducts();}
+ if(t.matches('[data-clear-category]')){state.category='All';renderCategories();renderProducts();}
 });
-$('[data-search]')?.addEventListener('input',e=>{state.query=e.target.value;renderProducts()});
-$('[data-backdrop]')?.addEventListener('click',close);
-document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-$('[data-form]')?.addEventListener('submit',async e=>{e.preventDefault();const form=e.currentTarget,btn=$('[type=submit]',form);if(!btn)return;btn.disabled=true;btn.textContent='Preparing order…';try{const customer=Object.fromEntries(new FormData(form)),cart=state.cart.map(i=>({...i})),amount=total(),r=await submitOrder({customer,items:cart,total:amount});state.lastOrder={customer,cart,total:amount,orderId:r.orderId};form.classList.add('hidden');const advance=Math.round(amount*(ORDER_POLICY.advancePercent/100));$('[data-order]').textContent='#'+r.orderId;$('[data-order-total]').textContent=money(amount);$('[data-advance]').textContent=money(advance);$('[data-balance]').textContent=money(amount-advance);$('[data-success]').classList.remove('hidden')}catch(err){toast(err.message)}finally{btn.disabled=false;btn.textContent='Review confirmation options'}});
-renderBrands();renderCategories();renderProducts();renderCart();
+$('[data-search]').addEventListener('input',e=>{state.query=e.target.value;renderProducts();});
+renderBrands();renderCategories();renderProducts();
