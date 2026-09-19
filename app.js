@@ -1,5 +1,20 @@
 import { STORE, INTEGRATIONS, CATEGORIES, BRANDS, PRODUCTS } from './store-data.js';
 
+const hidePreloader = () => {
+  const minimumDisplayMs = 800;
+  const remainingTime = Math.max(0, minimumDisplayMs - performance.now());
+  window.setTimeout(
+    () => document.getElementById('ddm-preloader')?.classList.add('ddm-loaded'),
+    remainingTime
+  );
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', hidePreloader, { once: true });
+} else {
+  hidePreloader();
+}
+
 const $ = (s, r = document) => r.querySelector(s);
 let state = { category: 'All', brand: 'All', query: '' };
 const money = (n) =>
