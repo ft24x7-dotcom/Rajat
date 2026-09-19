@@ -87,7 +87,7 @@ export const PRODUCTS = [
     name: "183 L Direct Cool Single Door · 3 Star · Silver",
     variant: "Model details available from DDM Electronics",
     features: ["183 L", "Direct Cool Single Door", "3 Star", "Silver"],
-    image: "./assets/catalog-2026/product-01.png",
+    image: "./assets/catalog-2026/product-01.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -97,7 +97,7 @@ export const PRODUCTS = [
     name: "350 L Frost Free Double Door · 2 Star · Silver",
     variant: "Model details available from DDM Electronics",
     features: ["350 L", "Frost Free Double Door", "2 Star", "Silver"],
-    image: "./assets/catalog-2026/product-02.png",
+    image: "./assets/catalog-2026/product-02.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -107,7 +107,7 @@ export const PRODUCTS = [
     name: "236 L Frost Free Double Door · 2 Star · Blue floral",
     variant: "Model details available from DDM Electronics",
     features: ["236 L", "Frost Free Double Door", "2 Star", "Blue floral"],
-    image: "./assets/catalog-2026/product-03.png",
+    image: "./assets/catalog-2026/product-03.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -117,7 +117,7 @@ export const PRODUCTS = [
     name: "189 L Direct Cool Single Door · 4 Star · Blue floral",
     variant: "Model details available from DDM Electronics",
     features: ["189 L", "Direct Cool Single Door", "4 Star", "Blue floral"],
-    image: "./assets/catalog-2026/product-04.png",
+    image: "./assets/catalog-2026/product-04.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -127,7 +127,7 @@ export const PRODUCTS = [
     name: "183 L Direct Cool Single Door · 5 Star · Blue floral",
     variant: "Model details available from DDM Electronics",
     features: ["183 L", "Direct Cool Single Door", "5 Star", "Blue floral"],
-    image: "./assets/catalog-2026/product-05.png",
+    image: "./assets/catalog-2026/product-05.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -137,7 +137,7 @@ export const PRODUCTS = [
     name: "189 L Direct Cool Single Door · 5 Star · Blue floral",
     variant: "Model details available from DDM Electronics",
     features: ["189 L", "Direct Cool Single Door", "5 Star", "Blue floral"],
-    image: "./assets/catalog-2026/product-06.png",
+    image: "./assets/catalog-2026/product-06.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -147,7 +147,7 @@ export const PRODUCTS = [
     name: "236 L Frost Free Double Door · 2 Star · Purple floral",
     variant: "Model details available from DDM Electronics",
     features: ["236 L", "Frost Free Double Door", "2 Star", "Purple floral"],
-    image: "./assets/catalog-2026/product-07.png",
+    image: "./assets/catalog-2026/product-07.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -157,7 +157,7 @@ export const PRODUCTS = [
     name: "236 L Frost Free Double Door · 3 Star · Silver",
     variant: "Model details available from DDM Electronics",
     features: ["236 L", "Frost Free Double Door", "3 Star", "Silver"],
-    image: "./assets/catalog-2026/product-08.png",
+    image: "./assets/catalog-2026/product-08.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -167,7 +167,7 @@ export const PRODUCTS = [
     name: "183 L Direct Cool Single Door · 4 Star · Blue leaf design",
     variant: "Model details available from DDM Electronics",
     features: ["183 L", "Direct Cool Single Door", "4 Star", "Blue leaf design"],
-    image: "./assets/catalog-2026/product-09.png",
+    image: "./assets/catalog-2026/product-09.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -177,7 +177,7 @@ export const PRODUCTS = [
     name: "183 L Direct Cool Single Door · 4 Star · Purple leaf design",
     variant: "Model details available from DDM Electronics",
     features: ["183 L", "Direct Cool Single Door", "4 Star", "Purple leaf design"],
-    image: "./assets/catalog-2026/product-10.png",
+    image: "./assets/catalog-2026/product-10.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -187,7 +187,7 @@ export const PRODUCTS = [
     name: "301 L Frost Free Double Door · 2 Star · Silver / black",
     variant: "Model details available from DDM Electronics",
     features: ["301 L", "Frost Free Double Door", "2 Star", "Silver / black"],
-    image: "./assets/catalog-2026/product-11.png",
+    image: "./assets/catalog-2026/product-11.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -197,7 +197,7 @@ export const PRODUCTS = [
     name: "189 L Direct Cool Single Door · 5 Star · Silver",
     variant: "Model details available from DDM Electronics",
     features: ["189 L", "Direct Cool Single Door", "5 Star", "Silver"],
-    image: "./assets/catalog-2026/product-12.png",
+    image: "./assets/catalog-2026/product-12.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -208,7 +208,7 @@ export const PRODUCTS = [
     name: "1 HP · 15 kg/hr Shakti Semi Automatic Stainless Steel Flour Mill",
     variant: "Shakti",
     features: ["1 HP · 15 kg/hr", "Shakti Semi Automatic Stainless Steel Flour Mill", "Screenshot states 440 V and 960 RPM. Verify voltage before publication."],
-    image: "./assets/catalog-2026/product-13.png",
+    image: "./assets/catalog-2026/product-13.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -219,7 +219,7 @@ export const PRODUCTS = [
     name: "Viva Fully Automatic Domestic Atta Chakki",
     variant: "Viva",
     features: [],
-    image: "./assets/catalog-2026/product-14.png",
+    image: "./assets/catalog-2026/product-14.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -230,7 +230,7 @@ export const PRODUCTS = [
     name: "1 HP · 7 sieves Superb Automatic Atta Chakki with Inbuilt Vacuum Cleaner",
     variant: "Superb",
     features: ["1 HP · 7 sieves", "Superb Automatic Atta Chakki with Inbuilt Vacuum Cleaner"],
-    image: "./assets/catalog-2026/product-15.png",
+    image: "./assets/catalog-2026/product-15.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -240,7 +240,7 @@ export const PRODUCTS = [
     name: "7 kg Semi Automatic Top Load · 5 Star · Air Turbo · Purple",
     variant: "Model details available from DDM Electronics",
     features: ["7 kg", "Semi Automatic Top Load", "5 Star", "Air Turbo"],
-    image: "./assets/catalog-2026/product-16.png",
+    image: "./assets/catalog-2026/product-16.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -250,7 +250,7 @@ export const PRODUCTS = [
     name: "6.5 kg Semi Automatic Top Load · 5 Star · Air Turbo · Navy",
     variant: "Model details available from DDM Electronics",
     features: ["6.5 kg", "Semi Automatic Top Load", "5 Star", "Air Turbo"],
-    image: "./assets/catalog-2026/product-17.png",
+    image: "./assets/catalog-2026/product-17.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -260,7 +260,7 @@ export const PRODUCTS = [
     name: "8 kg Semi Automatic · 5 Star · Soft Closing Door · Hexa Storm",
     variant: "Model details available from DDM Electronics",
     features: ["8 kg", "Semi Automatic", "5 Star", "Soft Closing Door"],
-    image: "./assets/catalog-2026/product-18.png",
+    image: "./assets/catalog-2026/product-18.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -270,7 +270,7 @@ export const PRODUCTS = [
     name: "10.5 kg Semi Automatic Top Load · 5 Star · Air Turbo",
     variant: "Model details available from DDM Electronics",
     features: ["10.5 kg", "Semi Automatic Top Load", "5 Star", "Air Turbo"],
-    image: "./assets/catalog-2026/product-19.png",
+    image: "./assets/catalog-2026/product-19.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -280,7 +280,7 @@ export const PRODUCTS = [
     name: "8 kg Semi Automatic Top Load · 5 Star · Air Turbo",
     variant: "Model details available from DDM Electronics",
     features: ["8 kg", "Semi Automatic Top Load", "5 Star", "Air Turbo"],
-    image: "./assets/catalog-2026/product-20.png",
+    image: "./assets/catalog-2026/product-20.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -290,7 +290,7 @@ export const PRODUCTS = [
     name: "9.5 kg Semi Automatic Top Load · 5 Star · Air Turbo",
     variant: "Model details available from DDM Electronics",
     features: ["9.5 kg", "Semi Automatic Top Load", "5 Star", "Air Turbo"],
-    image: "./assets/catalog-2026/product-21.png",
+    image: "./assets/catalog-2026/product-21.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -300,7 +300,7 @@ export const PRODUCTS = [
     name: "8.5 kg Semi Automatic Top Load · 5 Star · Air Turbo",
     variant: "Model details available from DDM Electronics",
     features: ["8.5 kg", "Semi Automatic Top Load", "5 Star", "Air Turbo"],
-    image: "./assets/catalog-2026/product-22.png",
+    image: "./assets/catalog-2026/product-22.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -310,7 +310,7 @@ export const PRODUCTS = [
     name: "7 kg Semi Automatic Top Load · Red / White",
     variant: "Model details available from DDM Electronics",
     features: ["7 kg", "Semi Automatic Top Load", "Red / White", "Separate red/white 7 kg listing. Exact model code not visible; do not merge with entry 44."],
-    image: "./assets/catalog-2026/product-23.png",
+    image: "./assets/catalog-2026/product-23.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -320,7 +320,7 @@ export const PRODUCTS = [
     name: "23 L Air Fry Microwave · 71 Cook Menus · Steam Clean",
     variant: "Model details available from DDM Electronics",
     features: ["23 L", "Air Fry Microwave", "71 Cook Menus", "Steam Clean"],
-    image: "./assets/catalog-2026/product-24.png",
+    image: "./assets/catalog-2026/product-24.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -330,7 +330,7 @@ export const PRODUCTS = [
     name: "30 L Convection Microwave · Motorized Rotisserie · 101 Menus",
     variant: "Model details available from DDM Electronics",
     features: ["30 L", "Convection Microwave", "Motorized Rotisserie", "101 Menus"],
-    image: "./assets/catalog-2026/product-25.png",
+    image: "./assets/catalog-2026/product-25.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -340,7 +340,7 @@ export const PRODUCTS = [
     name: "20 L Grill Microwave · 5 Power Levels · Dual Quartz",
     variant: "Model details available from DDM Electronics",
     features: ["20 L", "Grill Microwave", "5 Power Levels", "Dual Quartz"],
-    image: "./assets/catalog-2026/product-26.png",
+    image: "./assets/catalog-2026/product-26.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -351,7 +351,7 @@ export const PRODUCTS = [
     name: "11 / 7 / 3 kg Laundrimagic Washer Dryer Refresher with AI Dos",
     variant: "Executive Plus ZBG",
     features: ["11 / 7 / 3 kg", "Laundrimagic Washer Dryer Refresher with AI Dos", "MRP ₹84,690 and 12% off visible; final selling price not visible."],
-    image: "./assets/catalog-2026/product-27.png",
+    image: "./assets/catalog-2026/product-27.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -362,7 +362,7 @@ export const PRODUCTS = [
     name: "9 / 6 / 3 kg Laundrimagic Washer Dryer Refresher with AI Dry",
     variant: "Executive ZMN CMS",
     features: ["9 / 6 / 3 kg", "Laundrimagic Washer Dryer Refresher with AI Dry", "MRP ₹69,490 and 12% off visible; final selling price not visible."],
-    image: "./assets/catalog-2026/product-28.png",
+    image: "./assets/catalog-2026/product-28.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -372,7 +372,7 @@ export const PRODUCTS = [
     name: "1.5 Ton 2025 Inverter Split AC · 3 Star · Wi-Fi",
     variant: "Model details available from DDM Electronics",
     features: ["1.5 Ton", "2025 Inverter Split AC", "3 Star", "Wi-Fi"],
-    image: "./assets/catalog-2026/product-29.png",
+    image: "./assets/catalog-2026/product-29.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -383,7 +383,7 @@ export const PRODUCTS = [
     name: "1.5 Ton 2026 Inverter Split AC · 3 Star · 8-in-1 · DustBuster",
     variant: "CS/CU-EU18CKY3F",
     features: ["1.5 Ton", "2026 Inverter Split AC", "3 Star", "8-in-1"],
-    image: "./assets/catalog-2026/product-30.png",
+    image: "./assets/catalog-2026/product-30.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -394,7 +394,7 @@ export const PRODUCTS = [
     name: "1.5 Ton Inverter Split AC · 2 Star",
     variant: "CS/CU-KN18CKY",
     features: ["1.5 Ton", "Inverter Split AC", "2 Star"],
-    image: "./assets/catalog-2026/product-31.png",
+    image: "./assets/catalog-2026/product-31.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -405,7 +405,7 @@ export const PRODUCTS = [
     name: "1 Ton Fastcool SL Series · 3 Star · 8-in-1 Flexi",
     variant: "CI133SL11RGM3",
     features: ["1 Ton", "Fastcool SL Series", "3 Star", "8-in-1 Flexi"],
-    image: "./assets/catalog-2026/product-32.png",
+    image: "./assets/catalog-2026/product-32.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -416,7 +416,7 @@ export const PRODUCTS = [
     name: "1 Ton Fastcool Hot and Cold · 3 Star · 4-Way Auto Swing",
     variant: "HI1332A123GM1",
     features: ["1 Ton", "Fastcool Hot and Cold", "3 Star", "4-Way Auto Swing"],
-    image: "./assets/catalog-2026/product-33.png",
+    image: "./assets/catalog-2026/product-33.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -427,7 +427,7 @@ export const PRODUCTS = [
     name: "2 Ton Fastcool GN Series · 3 Star · Self Clean",
     variant: "CI223GN32RGM3",
     features: ["2 Ton", "Fastcool GN Series", "3 Star", "Self Clean"],
-    image: "./assets/catalog-2026/product-34.png",
+    image: "./assets/catalog-2026/product-34.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -438,7 +438,7 @@ export const PRODUCTS = [
     name: "1.5 Ton 2026 Inverter Split AC · 3 Star · 8-in-1 · Non-Wi-Fi",
     variant: "CI183GD22RGM3",
     features: ["1.5 Ton", "2026 Inverter Split AC", "3 Star", "8-in-1"],
-    image: "./assets/catalog-2026/product-35.png",
+    image: "./assets/catalog-2026/product-35.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -449,7 +449,7 @@ export const PRODUCTS = [
     name: "1.5 Ton 2026 Inverter Split AC · 3 Star · 4-Way Swing · Non-Wi-Fi",
     variant: "CI193GN22RGM3",
     features: ["1.5 Ton", "2026 Inverter Split AC", "3 Star", "4-Way Swing"],
-    image: "./assets/catalog-2026/product-36.png",
+    image: "./assets/catalog-2026/product-36.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -460,7 +460,7 @@ export const PRODUCTS = [
     name: "2 Ton Fastcool PN Smart Series · 5 Star · Direct Voice Command",
     variant: "CI245PL43SGN3",
     features: ["2 Ton", "Fastcool PN Smart Series", "5 Star", "Direct Voice Command"],
-    image: "./assets/catalog-2026/product-37.png",
+    image: "./assets/catalog-2026/product-37.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -471,7 +471,7 @@ export const PRODUCTS = [
     name: "1.5 Ton Fastcool GN Series · 5 Star · Self Clean",
     variant: "CI205GN32RGM4",
     features: ["1.5 Ton", "Fastcool GN Series", "5 Star", "Self Clean"],
-    image: "./assets/catalog-2026/product-38.png",
+    image: "./assets/catalog-2026/product-38.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -482,7 +482,7 @@ export const PRODUCTS = [
     name: "1.5 Ton Fastcool GN Series · 5 Star · Self Clean",
     variant: "CI205GN32RGM3",
     features: ["1.5 Ton", "Fastcool GN Series", "5 Star", "Self Clean"],
-    image: "./assets/catalog-2026/product-39.png",
+    image: "./assets/catalog-2026/product-39.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -493,7 +493,7 @@ export const PRODUCTS = [
     name: "1.5 Ton 2026 Vertis AI Zest Gold · 3 Star · Inverter",
     variant: "183INV VERTIS AI ZEST GOLD / 4504075",
     features: ["1.5 Ton", "2026 Vertis AI Zest Gold", "3 Star", "Inverter"],
-    image: "./assets/catalog-2026/product-40.png",
+    image: "./assets/catalog-2026/product-40.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -504,7 +504,7 @@ export const PRODUCTS = [
     name: "1.5 Ton 2026 Fixed Speed Split AC · 2 Star · Non-Wi-Fi",
     variant: "182FS PRISM",
     features: ["1.5 Ton", "2026 Fixed Speed Split AC", "2 Star", "Non-Wi-Fi"],
-    image: "./assets/catalog-2026/product-41.png",
+    image: "./assets/catalog-2026/product-41.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -515,7 +515,7 @@ export const PRODUCTS = [
     name: "1.5 Ton Vectra Zenith Silver · 3 Star · Inverter Split AC",
     variant: "183V Vectra Zenith Silver",
     features: ["1.5 Ton", "Vectra Zenith Silver", "3 Star", "Inverter Split AC"],
-    image: "./assets/catalog-2026/product-42.png",
+    image: "./assets/catalog-2026/product-42.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -526,7 +526,7 @@ export const PRODUCTS = [
     name: "1.5 Ton 2026 Vertis Zephyr Gold · 3 Star · 6-in-1 · Ice-Wash",
     variant: "183INV Vertis Zephyr Gold",
     features: ["1.5 Ton", "2026 Vertis Zephyr Gold", "3 Star", "6-in-1"],
-    image: "./assets/catalog-2026/product-43.png",
+    image: "./assets/catalog-2026/product-43.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
@@ -536,7 +536,7 @@ export const PRODUCTS = [
     name: "7 kg Semi Automatic Top Load · Red / White · second price listing",
     variant: "Model details available from DDM Electronics",
     features: ["7 kg", "Semi Automatic Top Load", "Red / White", "second price listing"],
-    image: "./assets/catalog-2026/product-44.png",
+    image: "./assets/catalog-2026/product-44.webp",
     source: "Customer-supplied catalogue reference",
   },
   {
