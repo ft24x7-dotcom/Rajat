@@ -6,8 +6,72 @@ export const CATEGORIES=[
 {id:'Washing Machine',label:'Washing Machines',detail:'Top load & front load',icon:'🫧'},{id:'AC',label:'Air Conditioners',detail:'Split & window ACs',icon:'❄️'},{id:'Refrigerator',label:'Refrigerators',detail:'Single & double door',icon:'🧊'},{id:'LED',label:'LED TVs',detail:'Smart, UHD & 4K',icon:'📺'},{id:'Atta Chakki',label:'Atta Chakki',detail:'Domestic flour mills',icon:'🌾'},{id:'Microwave Oven',label:'Microwave Ovens',detail:'Solo, grill & convection',icon:'♨️'},{id:'Iron',label:'Irons',detail:'Dry & steam irons',icon:'♨'},{id:'Mixer Grinder',label:'Mixer Grinders',detail:'Everyday kitchen essentials',icon:'⚙️'},{id:'Water Heater',label:'Water Heaters',detail:'Instant & storage geysers',icon:'💧'}];
 export const BRANDS=[
 {id:'Samsung',name:'Samsung',domain:'samsung.com',detail:'TVs, laundry & refrigerators',featured:true},{id:'Havells',name:'Havells',domain:'havells.com',detail:'Trusted home essentials',featured:true},{id:'Panasonic',name:'Panasonic',domain:'panasonic.com',detail:'Home & kitchen'},{id:'IFB',name:'IFB',domain:'ifbappliances.com',detail:'Laundry, cooling & kitchen'},{id:'Voltas',name:'Voltas',domain:'voltas.com',detail:'Cooling solutions'},{id:'Mitsubishi',name:'Mitsubishi',domain:'mitsubishielectric.com',detail:'Premium air conditioning'},{id:'AO Smith',name:'AO Smith',domain:'aosmithindia.com',detail:'Water heating'},{id:'Lloyd',name:'Lloyd',domain:'mylloyd.com',detail:'Selected air conditioners only'}];
-// Official brand imagery; store confirms model availability. Prices intentionally omitted.
+// Official brand imagery; store confirms model availability. Featured products may include supplied prices.
 export const PRODUCTS=[
+  {
+    "id": 2200,
+    "category": "Washing Machine",
+    "brand": "IFB",
+    "model": "TL801MG1",
+    "name": "IFB DeepClean® 8 kg Top Load Washing Machine with ActivMix",
+    "variant": "Powered by AI · Soft Close Door · 360° Bi-Axial Rotation",
+    "features": ["Powered by AI", "Soft Close Door", "360° Bi-Axial Rotation"],
+    "price": 19990,
+    "mrp": 25890,
+    "image": "./assets/ifb-tl801mg1.jpg",
+    "source": "https://www.ifbappliances.com/products/laundry/washing-machine"
+  },
+  {
+    "id": 2201,
+    "category": "Washing Machine",
+    "brand": "IFB",
+    "model": "TL-901AG1ID",
+    "name": "IFB DeepClean® 9 Kg Top Load Washing Machine with Eco Inverter Motor",
+    "variant": "Powered by AI · ActivMix · Eco Inverter Motor",
+    "features": ["Powered by AI", "ActivMix", "Eco Inverter Motor"],
+    "price": 25990,
+    "mrp": 33690,
+    "image": "./assets/ifb-tl-901ag1id.jpg",
+    "source": "https://www.ifbappliances.com/products/laundry/washing-machine"
+  },
+  {
+    "id": 2202,
+    "category": "Washing Machine",
+    "brand": "IFB",
+    "model": "TL701AG1SID",
+    "name": "IFB DeepClean® 7 kg Top Load Washing Machine with Eco Inverter Motor and Power Steam®",
+    "variant": "Powered by AI · ActivMix · Eco Inverter Motor",
+    "features": ["Powered by AI", "ActivMix", "Eco Inverter Motor"],
+    "price": 22290,
+    "mrp": 28890,
+    "image": "./assets/ifb-tl701ag1sid.jpg",
+    "source": "https://www.ifbappliances.com/products/laundry/washing-machine"
+  },
+  {
+    "id": 2203,
+    "category": "Washing Machine",
+    "brand": "IFB",
+    "model": "TL701AG1ID",
+    "name": "IFB DeepClean® 7 kg Top Load Washing Machine with Eco Inverter Motor",
+    "variant": "Powered by AI · ActivMix · Aqua Energie",
+    "features": ["Powered by AI", "ActivMix", "Aqua Energie"],
+    "price": 19990,
+    "mrp": 25890,
+    "image": "./assets/ifb-tl701ag1id.jpg",
+    "source": "https://www.ifbappliances.com/products/laundry/washing-machine"
+  },
+  {
+    "id": 2204,
+    "category": "Washing Machine",
+    "brand": "IFB",
+    "model": "TL-900NB2SID",
+    "name": "IFB DeepClean® 9 Kg Top Load Washing Machine with Eco Inverter Motor and Power Steam®",
+    "variant": "Powered by AI · ActivMix · Eco Inverter Motor",
+    "features": ["Powered by AI", "ActivMix", "Eco Inverter Motor"],
+    "price": 27490,
+    "image": "./assets/ifb-tl-900nb2sid.jpg",
+    "source": "https://www.ifbappliances.com/products/laundry/washing-machine"
+  },
   {
     "id": 2000,
     "category": "Washing Machine",
