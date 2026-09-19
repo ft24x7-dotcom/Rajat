@@ -1,0 +1,7 @@
+.git/
+assets/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.tar.gz

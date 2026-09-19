@@ -2,8 +2,7 @@
 
 - `store-data.js` — products, pricing, contact details and public integration switches.
 - `app.js` — storefront interactions only.
-- `order-service.js` — browser-to-backend communication.
-- `order-service.js` — connects to any future backend API, regardless of host.
+- `order-service.js` — browser-to-backend communication that can connect to any future API, regardless of host.
 - `.env.example` — names of future secrets; real values go in the chosen host's environment settings.
 
 ## Adding integrations later
