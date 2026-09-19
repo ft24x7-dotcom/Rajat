@@ -1,19 +1,7 @@
-import { STORE, INTEGRATIONS, ORDER_POLICY, CATEGORIES, BRANDS, PRODUCTS } from './store-data.js';
-
-const theme = document.createElement('link');
-theme.rel = 'stylesheet';
-theme.href = './theme.css';
-document.head.append(theme);
-window.addEventListener(
-  'load',
-  () =>
-    setTimeout(() => document.getElementById('ddm-preloader')?.classList.add('ddm-loaded'), 1800),
-  { once: true }
-);
+import { STORE, INTEGRATIONS, CATEGORIES, BRANDS, PRODUCTS } from './store-data.js';
 
 const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-let state = { category: 'All', brand: 'All', query: '', cart: [], lastOrder: null };
+let state = { category: 'All', brand: 'All', query: '' };
 const money = (n) =>
   new Intl.NumberFormat(STORE.locale, {
     style: 'currency',
@@ -23,7 +11,7 @@ const money = (n) =>
 function renderBrands() {
   $('[data-brands]').innerHTML = BRANDS.map(
     (b) =>
-      `<button class="${state.brand === b.id ? 'active' : ''} ${b.featured ? 'featured' : ''}" data-brand="${b.id}">${b.featured ? '<em class="brand-pick">Featured</em>' : ''}<span class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=${b.domain}&sz=128" alt="" loading="lazy"><b>${b.name}</b></span><small>${b.detail}</small><i>Shop brand →</i></button>`
+      `<button class="${state.brand === b.id ? 'active' : ''} ${b.featured ? 'featured' : ''}" data-brand="${b.id}">${b.featured ? '<em class="brand-pick">Featured</em>' : ''}<span class="brand-logo"><img src="https://www.google.com/s2/favicons?domain=${b.domain}&sz=128" alt="" width="48" height="48" loading="lazy" decoding="async"><b>${b.name}</b></span><small>${b.detail}</small><i>Shop brand →</i></button>`
   ).join('');
 }
 function renderCategories() {
@@ -63,7 +51,7 @@ function renderProducts() {
   $('[data-products]').innerHTML = items
     .map(
       (p) =>
-        `<article><div class="visual">${p.image ? `<img src="${p.image}" alt="${p.brand} ${p.name}" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><small hidden>Photo unavailable</small>` : `<b>${p.icon}</b>`}</div><div class="details"><small>${p.brand}${p.model ? ` · ${p.model}` : ''}</small><h3>${p.name}</h3>${p.features ? `<ul class="product-features">${p.features.map((feature) => `<li>${feature}</li>`).join('')}</ul>` : `<p>${p.variant}</p>`}${p.price ? `<div class="product-price"><b>${money(p.price)}</b>${p.mrp ? `<del>${money(p.mrp)}</del>` : ''}<span>In stock</span></div>` : ''}<a class="btn primary enquire-product" href="${enquiry(p)}" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></div></article>`
+        `<article><div class="visual">${p.image ? `<img src="${p.image}" alt="${p.brand} ${p.name}" width="360" height="270" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><small hidden>Photo unavailable</small>` : `<b>${p.icon}</b>`}</div><div class="details"><small>${p.brand}${p.model ? ` · ${p.model}` : ''}</small><h3>${p.name}</h3>${p.features ? `<ul class="product-features">${p.features.map((feature) => `<li>${feature}</li>`).join('')}</ul>` : `<p>${p.variant}</p>`}${p.price ? `<div class="product-price"><b>${money(p.price)}</b>${p.mrp ? `<del>${money(p.mrp)}</del>` : ''}<span>In stock</span></div>` : ''}<a class="btn primary enquire-product" href="${enquiry(p)}" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></div></article>`
     )
     .join('');
   $('[data-empty]').classList.toggle('hidden', items.length > 0);
