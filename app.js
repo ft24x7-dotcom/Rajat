@@ -23,14 +23,14 @@ function renderActiveFilters(){
 }
 function renderProducts(){
   const q=state.query.toLowerCase();
-  const items=PRODUCTS.filter(p=>(state.category==='All'||p.category===state.category)&&(state.brand==='All'||p.brand===state.brand)&&`${p.brand} ${p.name} ${p.variant}`.toLowerCase().includes(q));
-  $('[data-products]').innerHTML=items.map(p=>`<article><div class="visual">${p.image?`<img src="${p.image}" alt="${p.brand} ${p.name}" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><small hidden>Photo unavailable</small>`:`<b>${p.icon}</b>`}</div><div class="details"><small>${p.brand}</small><h3>${p.name}</h3><p>${p.variant}</p><a class="btn primary enquire-product" href="${enquiry(p)}" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></div></article>`).join('');
+  const items=PRODUCTS.filter(p=>(state.category==='All'||p.category===state.category)&&(state.brand==='All'||p.brand===state.brand)&&`${p.brand} ${p.model||''} ${p.name} ${p.variant} ${(p.features||[]).join(' ')}`.toLowerCase().includes(q));
+  $('[data-products]').innerHTML=items.map(p=>`<article><div class="visual">${p.image?`<img src="${p.image}" alt="${p.brand} ${p.name}" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><small hidden>Photo unavailable</small>`:`<b>${p.icon}</b>`}</div><div class="details"><small>${p.brand}${p.model?` · ${p.model}`:''}</small><h3>${p.name}</h3>${p.features?`<ul class="product-features">${p.features.map(feature=>`<li>${feature}</li>`).join('')}</ul>`:`<p>${p.variant}</p>`}${p.price?`<div class="product-price"><b>${money(p.price)}</b>${p.mrp?`<del>${money(p.mrp)}</del>`:''}<span>In stock</span></div>`:''}<a class="btn primary enquire-product" href="${enquiry(p)}" target="_blank" rel="noopener">Enquire on WhatsApp ↗</a></div></article>`).join('');
   $('[data-empty]').classList.toggle('hidden',items.length>0);
   renderActiveFilters(); if(!items.length){const a=document.createElement('a');a.className='btn pale';a.textContent='Ask the store about this range';a.href=enquiry();a.target='_blank';a.rel='noopener';$('[data-empty]').replaceChildren(document.createTextNode('Ask us for available models in this range. '),a);}
 }
 
 function enquiry(p){
- const subject=p ? p.brand+' '+p.name+' ('+p.variant+')' : [state.brand==='All'?'':state.brand,state.category==='All'?'appliances':state.category].filter(Boolean).join(' ');
+ const subject=p ? p.brand+' '+p.name+' ('+(p.model||p.variant)+')' : [state.brand==='All'?'':state.brand,state.category==='All'?'appliances':state.category].filter(Boolean).join(' ');
  return 'https://wa.me/'+INTEGRATIONS.whatsapp.phone+'?text='+encodeURIComponent('Hello DDM Electronics, I am interested in '+subject+'. Please share the latest price, availability and product details.');
 }
 document.addEventListener('click',e=>{
