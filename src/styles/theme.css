@@ -1,3 +1,8 @@
+/*
+ * DDM brand theme and late catalogue refinements.
+ * This file loads after main.css so these declarations intentionally override base styles.
+ */
+
 :root {
   --navy: #071b2a;
   --blue: #128fbd;

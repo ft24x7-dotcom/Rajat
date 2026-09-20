@@ -1,37 +1,67 @@
-# DDM Electronics website
+# DDM Electronics storefront
 
-This is the source code for the DDM Electronics catalogue website. It is a lightweight static site: no framework, build step, database, or payment gateway is required for the current version.
+This repository contains the production source for the DDM Electronics catalogue website. It is a
+static HTML, CSS, and JavaScript project, so the storefront does not need a framework, database, or
+build step.
 
-## Project layout
+## Quick start
 
-- `index.html` — page structure and store information shown outside the catalogue.
-- `styles.css` — main storefront styling.
-- `theme.css` — DDM-specific visual theme and preloader styling.
-- `app.js` — product display, search, filters, cart, and enquiry interactions.
-- `store-data.js` — all products, categories, brands, prices, and public store settings.
-- `order-service.js` — placeholder service layer for a later backend or payment integration.
-- `assets/` — locally supplied brand and product images.
-- `HOSTING.md` — deployment notes.
-- `ARCHITECTURE.md` — guidance for a future developer adding a backend.
+1. Install the formatting tool with `npm install`.
+2. Serve the repository root with any static web server.
+3. Open `index.html` through that server. ES modules do not work reliably from a `file://` URL.
+4. Before committing a change, run `npm run format` and then `npm run check`.
 
-## Hosting
+No compilation is required. Vercel serves the files directly from the repository root.
 
-Upload all website files into the host's public website directory. This is usually `public_html` on Hostinger and GoDaddy/cPanel hosting. Keep `index.html` at the top level.
+## Project structure
 
-## Safe common edits
+```text
+.
+├── index.html                     # Page content and semantic structure
+├── assets/
+│   ├── branding/                  # DDM logo and future brand assets
+│   └── products/                  # Optimized local catalogue images
+├── src/
+│   ├── scripts/
+│   │   ├── app.js                 # Search, filters, catalogue rendering, enquiries
+│   │   ├── data/
+│   │   │   ├── products.js        # Product catalogue only
+│   │   │   └── store-config.js    # Store, category, brand, and integration settings
+│   │   └── services/
+│   │       └── order-service.js   # Future server-order integration boundary
+│   └── styles/
+│       ├── main.css               # Base layout, components, and responsive rules
+│       └── theme.css              # DDM brand overrides and catalogue refinements
+├── scripts/
+│   └── validate-project.mjs       # Checks product data and local file references
+├── docs/
+│   ├── ARCHITECTURE.md            # Application boundaries and future integrations
+│   ├── HOSTING.md                 # Hosting and deployment notes
+│   └── PRODUCT-CATALOG.md         # Safe product-editing guide
+├── vercel.json                    # Vercel cache headers
+└── package.json                   # Developer formatting and validation commands
+```
 
-- `store-data.js`: products, categories, prices and store contact details.
-- `styles.css`: colors, spacing and mobile/desktop design.
-- `index.html`: headings, store address, opening hours and page sections.
-- `order-service.js`: future database, payment, email and WhatsApp integration.
-- `app.js`: cart, filtering and checkout interactions.
+## Common changes
 
-This version is a front-end catalogue. The checkout deliberately does not charge customers.
+| Change                                           | File                               |
+| ------------------------------------------------ | ---------------------------------- |
+| Add, remove, or update a product                 | `src/scripts/data/products.js`     |
+| Change store contact information                 | `src/scripts/data/store-config.js` |
+| Change categories or featured brands             | `src/scripts/data/store-config.js` |
+| Change headings, sections, or store address text | `index.html`                       |
+| Change the base layout or responsive styling     | `src/styles/main.css`              |
+| Change DDM colours or catalogue-specific styling | `src/styles/theme.css`             |
+| Change search, filtering, or enquiry behaviour   | `src/scripts/app.js`               |
 
-## Code style
+## Important rules
 
-The project uses Prettier-compatible formatting with two spaces, single quotes, semicolons, and a 100-character line limit. Keep public keys and secret credentials out of this repository.
+- Product IDs must be unique numbers.
+- A product category must exactly match a category ID in `store-config.js`.
+- Product paths are relative to `index.html`, for example
+  `./assets/products/catalog-2026/product-01.webp`.
+- Do not place API keys, payment secrets, access tokens, or passwords in browser files.
+- Keep `INTEGRATIONS.useLiveOrderApi` set to `false` until a private backend is connected and tested.
 
-## Future integrations
-
-The project includes a host-independent integration service layer. See `ARCHITECTURE.md` and `HOSTING.md`. Keep `useLiveOrderApi` set to `false` until the payment gateway, database and notifications are connected and tested.
+See [the catalogue guide](docs/PRODUCT-CATALOG.md) for product examples and
+[the architecture guide](docs/ARCHITECTURE.md) before adding payments or a database.

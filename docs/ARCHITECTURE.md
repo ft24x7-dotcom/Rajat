@@ -1,8 +1,10 @@
 # Integration-ready structure
 
-- `store-data.js` — products, pricing, contact details and public integration switches.
-- `app.js` — storefront interactions only.
-- `order-service.js` — browser-to-backend communication that can connect to any future API, regardless of host.
+- `src/scripts/data/store-config.js` — contact details and public integration switches.
+- `src/scripts/data/products.js` — products, specifications, pricing, and image references.
+- `src/scripts/app.js` — storefront rendering and interactions only.
+- `src/scripts/services/order-service.js` — browser-to-backend communication that can connect to
+  any future API, regardless of host.
 - `.env.example` — names of future secrets; real values go in the chosen host's environment settings.
 
 ## Adding integrations later

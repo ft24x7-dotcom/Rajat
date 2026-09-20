@@ -1,0 +1,14 @@
+{
+  "name": "ddm-electronics-storefront",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static catalogue website for DDM Electronics",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/validate-project.mjs && prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "3.9.8"
+  }
+}

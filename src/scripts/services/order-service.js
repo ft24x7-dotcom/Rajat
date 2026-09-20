@@ -1,4 +1,4 @@
-import { INTEGRATIONS } from './store-data.js';
+import { INTEGRATIONS } from '../data/store-config.js';
 // All order traffic passes through this service. Enable the live API only after
 // the configured API is connected to a database, notifications and payments.
 export async function submitOrder(order) {
