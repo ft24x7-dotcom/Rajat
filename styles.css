@@ -1,16 +1,17 @@
 /* DDM brand logo */
 .brand img {
   display: block;
-  width: 156px;
-  height: 58px;
+  width: 172px;
+  height: 64px;
   object-fit: contain;
   object-position: left center;
 }
 .footer-brand img {
-  width: 190px;
-  height: 92px;
-  filter: drop-shadow(0 8px 18px rgba(22, 183, 178, 0.12));
+  width: 210px;
+  height: 106px;
+  filter: drop-shadow(0 10px 22px rgba(190, 132, 22, 0.16));
 }
+
 #ddm-preloader {
   position: fixed;
   inset: 0;
@@ -18,211 +19,268 @@
   display: grid;
   place-items: center;
   padding: 24px;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 50% 42%, rgba(29, 190, 184, 0.11), transparent 34rem),
-    linear-gradient(145deg, #fff 0%, #f6fcfc 48%, #eef9fa 100%);
+    radial-gradient(circle at 50% 44%, rgba(239, 180, 55, 0.14), transparent 28rem),
+    linear-gradient(150deg, #fffdf8 0%, #fff 52%, #fbf5e9 100%);
   transition:
-    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.4s;
+    opacity 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.42s;
 }
+
+#ddm-preloader::before,
+#ddm-preloader::after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  pointer-events: none;
+}
+#ddm-preloader::before {
+  width: min(72vw, 620px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(226, 166, 45, 0.12);
+  animation: ddm-halo 2.8s ease-in-out infinite;
+}
+#ddm-preloader::after {
+  width: min(48vw, 410px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(226, 166, 45, 0.16);
+  animation: ddm-halo 2.8s 0.35s ease-in-out infinite;
+}
+
 #ddm-preloader.ddm-loaded {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
+
 .ddm-loader {
   position: relative;
+  z-index: 1;
   isolation: isolate;
   display: grid;
-  width: min(82vw, 520px);
+  width: min(86vw, 620px);
   justify-items: center;
-  transform: translateY(-2vh);
+  transform: translateY(-1vh);
 }
+
 .ddm-logo-wrap {
   position: relative;
   display: grid;
   width: 100%;
   place-items: center;
-  animation: ddm-enter 0.65s cubic-bezier(0.16, 0.8, 0.24, 1) both;
+  animation: ddm-enter 0.72s cubic-bezier(0.16, 0.84, 0.24, 1) both;
 }
+
 .ddm-loader-logo {
   display: block;
-  width: min(100%, 500px);
+  width: min(100%, 590px);
   height: auto;
   user-select: none;
   -webkit-user-drag: none;
-  filter: saturate(1.06) contrast(1.03) drop-shadow(0 18px 32px rgba(22, 96, 120, 0.1));
   transform-origin: center;
-  animation: ddm-breathe 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 18px 38px rgba(134, 93, 14, 0.15));
+  animation: ddm-breathe 2.6s ease-in-out infinite;
 }
+
 .ddm-aura {
   position: absolute;
-  top: 50%;
+  top: 35.2%;
   left: 50%;
   z-index: -1;
-  width: min(68vw, 330px);
+  width: min(42vw, 285px);
   aspect-ratio: 1;
+  translate: -50% -50%;
   border-radius: 50%;
-  translate: -50% -53%;
   pointer-events: none;
 }
-.ddm-aura::before {
+
+.ddm-aura::before,
+.ddm-aura::after {
   position: absolute;
   inset: 0;
   content: '';
   border-radius: inherit;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0 18%,
-    rgba(26, 130, 204, 0.75) 25%,
-    rgba(34, 183, 196, 0.88) 34%,
-    rgba(37, 200, 145, 0.75) 43%,
-    transparent 51% 73%,
-    rgba(34, 183, 196, 0.45) 80%,
-    transparent 88% 100%
-  );
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  animation: ddm-orbit 2.8s linear infinite;
-  filter: drop-shadow(0 0 9px rgba(29, 174, 189, 0.34));
 }
+
+.ddm-aura::before {
+  border: 2px solid transparent;
+  border-top-color: rgba(233, 171, 47, 0.9);
+  border-right-color: rgba(246, 198, 90, 0.55);
+  filter: drop-shadow(0 0 10px rgba(233, 171, 47, 0.34));
+  animation: ddm-orbit 2.35s linear infinite;
+}
+
+.ddm-aura::after {
+  inset: 12px;
+  border: 1px dashed rgba(226, 166, 45, 0.38);
+  animation: ddm-orbit-reverse 5.2s linear infinite;
+}
+
 .ddm-shine {
   position: absolute;
-  inset: 5% 4% 7%;
+  inset: 0;
   overflow: hidden;
-  border-radius: 22px;
-  mix-blend-mode: screen;
+  border-radius: 26px;
   pointer-events: none;
 }
+
 .ddm-shine::before {
   position: absolute;
-  top: -35%;
-  bottom: -35%;
-  left: -22%;
-  width: 11%;
+  top: -28%;
+  bottom: -28%;
+  left: -28%;
+  width: 13%;
   content: '';
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.82),
-    rgba(86, 236, 218, 0.54),
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 224, 153, 0.56),
     transparent
   );
-  filter: blur(8px);
-  transform: skewX(-13deg);
-  animation: ddm-scan 2.05s cubic-bezier(0.35, 0, 0.2, 1) infinite;
+  filter: blur(9px);
+  transform: skewX(-14deg);
+  animation: ddm-scan 2.15s cubic-bezier(0.34, 0, 0.18, 1) infinite;
 }
+
 .ddm-progress {
-  width: clamp(80px, 16vw, 124px);
+  width: clamp(94px, 18vw, 142px);
   height: 2px;
   margin-top: 18px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(28, 111, 137, 0.09);
+  background: rgba(193, 141, 35, 0.11);
   animation: ddm-fade 0.3s 0.35s ease both;
 }
+
 .ddm-progress::after {
   display: block;
-  width: 42%;
+  width: 40%;
   height: 100%;
   content: '';
   border-radius: inherit;
-  background: linear-gradient(90deg, #1b83c7, #22b7c4, #25c891);
-  box-shadow: 0 0 9px rgba(34, 183, 196, 0.38);
-  animation: ddm-progress 1.12s ease-in-out infinite;
+  background: linear-gradient(90deg, #d99b1d, #f1bd4b, #f6d782);
+  box-shadow: 0 0 10px rgba(226, 166, 45, 0.34);
+  animation: ddm-progress 1.08s ease-in-out infinite;
 }
+
 @keyframes ddm-enter {
   from {
     opacity: 0;
-    filter: blur(5px);
-    transform: scale(0.9) translateY(8px);
+    filter: blur(7px);
+    transform: scale(0.9) translateY(10px);
   }
   to {
     opacity: 1;
     filter: blur(0);
-    transform: scale(1);
+    transform: scale(1) translateY(0);
   }
 }
+
 @keyframes ddm-breathe {
   50% {
-    transform: translateY(-3px) scale(1.006);
+    transform: translateY(-4px) scale(1.008);
   }
 }
+
+@keyframes ddm-halo {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.035);
+  }
+}
+
 @keyframes ddm-orbit {
   to {
     transform: rotate(360deg);
   }
 }
+
+@keyframes ddm-orbit-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
 @keyframes ddm-scan {
   0% {
-    left: -22%;
+    left: -28%;
     opacity: 0;
   }
-  14% {
+  12% {
     opacity: 0.9;
   }
-  72% {
-    opacity: 0.76;
+  74% {
+    opacity: 0.72;
   }
   100% {
-    left: 116%;
+    left: 118%;
     opacity: 0;
   }
 }
+
 @keyframes ddm-fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+
 @keyframes ddm-progress {
   0% {
     opacity: 0.35;
-    transform: translateX(-110%);
+    transform: translateX(-115%);
   }
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0.35;
-    transform: translateX(270%);
+    transform: translateX(275%);
   }
 }
+
 @media (max-width: 600px) {
   .brand img {
-    width: 128px;
-    height: 49px;
+    width: 136px;
+    height: 52px;
   }
   .footer-brand img {
-    width: 170px;
-    height: 88px;
+    width: 184px;
+    height: 94px;
   }
   .ddm-loader {
-    width: min(92vw, 430px);
+    width: min(92vw, 500px);
+  }
+  .ddm-loader-logo {
+    width: min(100%, 470px);
   }
   .ddm-aura {
-    width: min(76vw, 290px);
+    width: min(52vw, 245px);
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
+  #ddm-preloader::before,
+  #ddm-preloader::after,
   .ddm-loader-logo,
   .ddm-aura::before,
+  .ddm-aura::after,
   .ddm-shine::before,
   .ddm-progress::after {
     animation: none !important;
   }
 }
+
 .footer-brand {
   width: max-content;
-  padding: 5px 10px;
-  border-radius: 12px;
+  padding: 7px 12px;
+  border-radius: 14px;
   background: #fff;
-}
-.footer-brand img {
-  width: 170px;
-  height: 74px;
 }
 
 /* Minimal DDM visual refresh */
